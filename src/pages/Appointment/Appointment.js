@@ -8,11 +8,11 @@ const Appointment = () => {
     const [date,setDate] = useState(new Date())
 
     return (
-        <>
+        <div >
             <AppointmentBanner date={date} setDate={setDate} />
             <AvailableAppointment date={date} />
             <Footer />
-        </>
+        </div>
     );
 };
 
