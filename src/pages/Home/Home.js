@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 import Banner from './Banner';
 import Info from './Info';
 import MakeAppoinment from './MakeAppoinment';
@@ -20,6 +20,7 @@ const Home = () => {
             <MakeAppoinment />
             <PatientReview />
             <Footer />
+           
         </div>
     );
 };

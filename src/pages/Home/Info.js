@@ -11,7 +11,7 @@ const Info = () => {
     
    
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-20'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-20 pt-12'>
             <InfoCard title='Opening Hours' color={gradientColor} img={clock}  />
             <InfoCard title='Our Locations' color={colorAccent}img={marker}  />
             <InfoCard title='Contact Us'  color={gradientColor} img={phone}  />
