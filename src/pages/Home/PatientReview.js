@@ -15,7 +15,7 @@ const PatientReview = () => {
 
         },
         {
-            _id: 1,
+            _id: 2,
             name: 'Lawray doe',
             desc: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
             img: img2,
@@ -23,7 +23,7 @@ const PatientReview = () => {
 
         },
         {
-            _id: 1,
+            _id: 3,
             name: 'Henry ford',
             desc: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
             img: img3,
