@@ -5,6 +5,7 @@ import Info from './Info';
 import MakeAppoinment from './MakeAppoinment';
 import PatientReview from './PatientReview';
 import Service from './Service';
+import StayConnected from './StayConnected';
 import Treatment from './Treatment';
 
 
@@ -19,7 +20,9 @@ const Home = () => {
             <Treatment />
             <MakeAppoinment />
             <PatientReview />
+            <StayConnected />
             <Footer />
+            
            
         </div>
     );

@@ -14,14 +14,14 @@ const AvailableAppointment = ({ date }) => {
     },[])
     return (
         <div className='my-12'>
-            <p className='text-xl text-center text-secondary font-bold'>Available Appointment on {format(date, 'PP')}</p>
+            <p className='text-xl text-center text-secondary font-bold my-24'>Available Appointment on {format(date, 'PP')}</p>
             <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 px-12'>
                 {
                     services.map(service => <Service key={service._id} service={service} setTreatment={setTreatment}  />)
                 }
             </div>
             {
-                treatment && <BookingModal treatment={treatment} />
+                treatment && <BookingModal setTreatment={setTreatment} date={date} treatment={treatment}></BookingModal>
             }
         </div>
     );
