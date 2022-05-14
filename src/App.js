@@ -9,6 +9,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/Login/SignUp';
 import Navbar from './pages/Navbar/Navbar';
 import Review from './pages/Review/Review';
+import RequireAuth from './pages/Shared/RequireAuth';
 
 function App() {
   return (
@@ -19,7 +20,12 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/appointment' element={<Appointment />} />
+        <Route path='/appointment' element={
+          <RequireAuth>
+            <Appointment/>
+          </RequireAuth>
+          
+          } />
         <Route path='/review' element={<Review />} />
         <Route path='/contactUs' element={<ContactUs />} />
         <Route path='/login' element={<Login />} />

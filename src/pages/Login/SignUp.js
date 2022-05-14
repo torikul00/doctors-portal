@@ -3,8 +3,8 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import {Link, useNavigate} from 'react-router-dom'
-import { async } from '@firebase/util';
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,7 +16,9 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updatError] = useUpdateProfile(auth);
-    const navigate  = useNavigate()
+    const navigate = useNavigate()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/"
 
     let signInError
     if (loading || gLoading || updating) {
@@ -30,12 +32,14 @@ const SignUp = () => {
         signInError = <p className='my-4 text-red-500'>{error?.message || gError?.message ||updatError?.message }</p>
         
     }
+    if (user) {
+        navigate(from, { replace: true });
+    }
     const onSubmit = async data => {
-        console.log(data)
+
        await createUserWithEmailAndPassword(data.email,data.password)
         await updateProfile({ displayName: data.name })
-        console.log('updated')
-        navigate('/')
+       
     }
     return (
         <div className='flex justify-center items-center h-screen'>
