@@ -16,6 +16,9 @@ const Navbar = () => {
         <li><Link to='/appointment'>Appointment</Link></li>
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/contactUs'>Contact Us</Link></li>
+        <li>{
+            user && <Link to='/dashboard'>Dashboard</Link>
+        }</li>
         <li>{user? <button onClick={handleSignOut} className='btn text-primary'>Sign Out</button> :<button className='btn text-primary' onClick={()=>navigate('/login')}>Login</button> }</li>
 
     </>
@@ -35,12 +38,17 @@ const Navbar = () => {
                 <Link to='/' className="btn btn-ghost normal-case text-xl ml-24">Doctors Portal</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal px-8">
                     {menuItem}
 
 
                 </ul>
             </div>
+
+            <div className="navbar-end lg:hidden">
+                 <label for="my-drawer-2" class="btn btn-primary btn-sm drawer-button lg:hidden">Dashboard Menu</label>
+          </div>
+            
         </div>
 
     );
