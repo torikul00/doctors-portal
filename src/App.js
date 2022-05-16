@@ -10,11 +10,13 @@ import SignUp from './pages/Login/SignUp';
 import Navbar from './pages/Navbar/Navbar';
 import Review from './pages/Review/Review';
 import RequireAuth from './pages/Shared/RequireAuth';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div>
-
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

@@ -40,21 +40,21 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-2xl font-bold">Login</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs">
 
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Email"
-                                class="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -66,22 +66,22 @@ const Login = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors?.email?.type === 'required' && <span className='text-red-500'>Email is required</span>}
                                 {errors?.email?.type === 'pattern' && <span className='text-red-500'>Invalid Email</span>}
 
 
                             </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs">
 
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input
                                 type="Password"
                                 placeholder="Your Password"
-                                class="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -93,7 +93,7 @@ const Login = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors?.password?.type === 'required' && <span className='text-red-500'>Password is required</span>}
                                 {errors?.password?.type === 'minLength' && <span className='text-red-500'>Password is too short</span>}
 
@@ -103,12 +103,12 @@ const Login = () => {
                         {
                             signInError
                         }
-                        <button type='submit' class="btn btn-accent text-white-500 w-full max-w-xs">Login</button>
+                        <button type='submit' className="btn btn-accent text-white-500 w-full max-w-xs">Login</button>
                         <p className='my-4'>New to Doctors Portal ? <Link className='text-secondary' to='/signUp'>Create new account</Link> </p>
                     </form>
 
 
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className='btn btn-accent btn-outline'>Continue with Google</button>
                 </div>
             </div>
